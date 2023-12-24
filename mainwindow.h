@@ -17,7 +17,9 @@ private:
     cv::VideoCapture capture;
 
     QLabel* camView;
-
+    QLabel* corolDescription;
+    void determineLEDColor(const cv::Mat& hsv, cv::Mat& frame);
+    void drawCircleAroundLED(const cv::Mat& mask, cv::Mat& frame,  const std::string& colorString);
 private slots:
     void updateFrame();
 };
